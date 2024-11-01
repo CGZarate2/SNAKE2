@@ -20,17 +20,35 @@ int main(int argc, char const *argv[])
         //can.DrawPointCircle(10,10,10);
         //can.DrawPointLine(0, 0, 300, 50);
         
-        can.DrawPointLine(150, 10, 150, 40);
-        can.DrawPointLine(130, 25, 170, 25);
-        can.DrawPointLine(150, 10, 170, 10);
-        can.DrawPointLine(130, 25, 130, 10);
-        can.DrawPointLine(130, 40, 150, 40);
-        can.DrawPointLine(170, 25, 170, 40);
-        can.DrawPointCircle(frame, 25, 20);
+        can.DrawPointLine(130, 60, 170, 60);   
+        can.DrawPointLine(130, 60, 130, 30);   
+        can.DrawPointLine(170, 60, 170, 30);   
+        can.DrawPointLine(130, 30, 170, 30);   
 
-        if (frame == 150){
-            can.DrawBlockCircleFilled(150, 25, 30);
-            this_thread::sleep_for(2s);
+
+        can.DrawPointLine(130, 30, 150, 10);   
+        can.DrawPointLine(170, 30, 150, 10);   
+
+        can.DrawPointLine(145, 60, 155, 60);  
+        can.DrawPointLine(145, 60, 145, 45);   
+        can.DrawPointLine(155, 60, 155, 45);   
+        can.DrawPointLine(145, 45, 155, 45); 
+        //can.DrawPointCircle(frame, 25, 20);
+
+        if (frame <= 120){
+            can.DrawPointLine(frame, 60, frame + 20, 60);
+            can.DrawPointLine(frame, 60, frame + 10, 50);
+            can.DrawPointLine(frame + 20, 60, frame + 10, 50);
+            can.DrawPointLine(frame + 10, 50, frame + 10, 40);
+            can.DrawPointLine(frame + 10, 40, frame + 15, 45);
+            can.DrawPointLine(frame + 10, 40, frame + 5, 45);
+            
+        }else{
+            if (frame < 200)
+            {
+                can.DrawBlockCircleFilled(130, 45, frame-140);
+            }
+            
         }
         
         Screen pantalla = Screen::Create(Dimension::Full(), Dimension::Full());
